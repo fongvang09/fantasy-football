@@ -1,0 +1,21 @@
+{
+  "name": "fantasy-football",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fongvang09/fantasy-football.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fongvang09/fantasy-football/issues"
+  },
+  "homepage": "https://github.com/fongvang09/fantasy-football#readme"
+}
