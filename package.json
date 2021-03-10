@@ -23,5 +23,15 @@
   "bugs": {
     "url": "https://github.com/fongvang09/fantasy-football/issues"
   },
-  "homepage": "https://github.com/fongvang09/fantasy-football#readme"
+  "homepage": "https://github.com/fongvang09/fantasy-football#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "express": "^4.17.1",
+    "if-env": "^1.0.4",
+    "mongoose": "^5.11.19"
+  },
+  "devDependencies": {
+    "concurrently": "^6.0.0",
+    "nodemon": "^2.0.7"
+  }
 }
