@@ -1,24 +1,33 @@
-import logo from './logo.svg';
+import './index.css';
 import './App.css';
+import Inputpage from './pages/Login';
+
+
 
 function App() {
   return (
+    <>
+    <div class="navbar">
+**NAVBAR BUTTONS HERE
+add file to be rendered here 
+    </div>
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+       <h1>FANTASY FOOTBALL</h1> 
       </header>
     </div>
+    <div class="maindiv">
+      **** PREVIEW OF WHAT THE WEBSITE OFFERS HERE, MAYBE SIGNUP BUTTON AND LOGIN BUTTON
+     <br/>
+     Already have a team created? Sign in Here!
+    <Inputpage/>
+
+    <br/>
+    or click here to sign up! ****create signup.js ??
+    </div>
+
+   
+    </>
   );
 }
 
