@@ -1,9 +1,10 @@
 import React from "react";
 import './index.css';
-import Home from './pages/Home'
+import Home from './pages/Home';
+import Team from './pages/Team';
 import Inputpage from './pages/Login';
 import Nav from './components/Nav';
-
+import { BrowserRouter as Router, Route} from 'react-router-dom';
 
 
 
@@ -11,9 +12,11 @@ import Nav from './components/Nav';
 function App() {
   return (
     <>
+    <Router>
     <Nav />
-    <Home />
-    
+    <Route component={Home} exact path='/'/>
+    <Route component={Team} exact path='/team'/>
+    </Router>
     </>
   );
 }
