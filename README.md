@@ -30,3 +30,9 @@ The Fantasy Football Application Utlizes the following:
 
 ## Usage 
 The application can be accessed via Heroku: 
+
+## Links
+https://stormy-reaches-02847.herokuapp.com/
+<br/>
+https://github.com/fongvang09/fantasy-football
+
