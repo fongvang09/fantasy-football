@@ -1,6 +1,6 @@
 import './index.css';
 import './App.css';
-import Inputpage from './Login';
+import Inputpage from './pages/Login';
 
 
 
