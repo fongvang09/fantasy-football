@@ -8,23 +8,15 @@ opacity:0.7 !important;
 h1{
   font-size:75px;
   color:white;
-  
 }
 
-.navbar{
-padding: 0px;
-color:white;
-background-color:black;
-opacity:0.7 !important;
-
-}
 
 .maindiv{
   float: none;
   margin: 0 auto;
-  background-color:black;
+  background-color:white;
   opacity:0.7 !important;
-  color:white;
+  color: black;
   height: 50vh;
   width:150vh;
 

@@ -1,8 +1,8 @@
-import '../index.css';
-import '../App.css';
-
-
 import React from "react";
+
+
+
+
 
 const InputPage = () => {
   return (
