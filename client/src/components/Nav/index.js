@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from 'react-router-dom'
-
+import { Link } from 'react-router-dom';
+import LoginButton from '../Login';
 
 function Nav() {
   return (
@@ -21,7 +21,7 @@ function Nav() {
             </button>
 
             {/* I ADDED LOGOUT BUTTON.. DO WE WANT ONE OF THESE YALL? */}
-
+            <LoginButton />
             <Link className="navbar-brand" to="/">Log out<span class="sr-only">(current)</span></Link>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
