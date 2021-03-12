@@ -1,6 +1,12 @@
-import React from "react";
-
+import React, { useEffect } from "react";
+import API from "../utils/API.js"
 const Home = () => {
+    useEffect(()=>{
+        console.log("message from frontend")
+        API.getMessage().then(message=>{
+            console.log(message)
+        })
+    }, [])
     return (
         <>
         <h1>Welcome To Fantasy-Football</h1>
