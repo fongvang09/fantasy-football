@@ -8,6 +8,7 @@ header {
   h1 {
     font-size:75px;
     color:white;
+    text-align: center;
   }
   
   
@@ -32,6 +33,15 @@ header {
     background-size: cover;
     }
     
+  .divMain {
+    
+    background-color: grey;
+    opacity:0.7;
+    margin: 0 auto;
+    height: 50vh;
+    width:150vh;
+    
+    }
 
 
 
