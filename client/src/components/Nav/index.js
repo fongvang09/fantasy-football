@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from 'react-router-dom'
-
+import { Link } from 'react-router-dom';
+import LoginButton from '../Login';
 
 function Nav() {
   return (
@@ -20,7 +20,7 @@ function Nav() {
             
 
             {/* I ADDED LOGOUT BUTTON.. DO WE WANT ONE OF THESE YALL? */}
-
+           <li><LoginButton /></li>
            <li><Link className="navbar-brand" to="/">Log out<span class="sr-only">(current)</span></Link></li>
             
             
