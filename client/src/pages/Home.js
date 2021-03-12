@@ -13,15 +13,16 @@ const Home = () => {
     }, [])
     console.log(NFLIcons)
     return (
-      
-      
+      <>
+      {/* <h1>Fantasy-Football</h1> */}
       <div className="container maindiv">
         
+        
        <h2><center>An App for creating your very own dream team</center></h2>
-          <form class="form-inline my-2 my-lg-0">
-            <input id="findinput" class="form-control mr-sm-2" type="search" placeholder="Find A Player" aria-label="Search"/>
+          <form className="form-inline my-2 my-lg-0">
+            <input id="findinput" className="form-control mr-sm-2" type="search" placeholder="Find A Player" aria-label="Search"/>
       
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
           </form>
           
           
@@ -34,73 +35,73 @@ const Home = () => {
       <br/>
       <br/>
 
-  <section class="slider-container">
- <div class="image-container">
-  <div class="slider-image" ><NFLIcons.ARI />
+  <section className="slider-container">
+ <div className="image-container">
+  <div className="slider-image" ><NFLIcons.ARI />
   </div>
-  <div class="slider-image" ><NFLIcons.MIN />
+  <div className="slider-image" ><NFLIcons.MIN />
   </div>
-  <div class="slider-image" ><NFLIcons.DET />
+  <div className="slider-image" ><NFLIcons.DET />
   </div>
-  <div class="slider-image" > <NFLIcons.BAL />
+  <div className="slider-image" > <NFLIcons.BAL />
   </div>
-  <div class="slider-image" > <NFLIcons.ATL />
+  <div className="slider-image" > <NFLIcons.ATL />
   </div>
-  <div class="slider-image" > <NFLIcons.BUF />
+  <div className="slider-image" > <NFLIcons.BUF />
   </div>
-  <div class="slider-image" > <NFLIcons.CAR />
+  <div className="slider-image" > <NFLIcons.CAR />
   </div>
-  <div class="slider-image" >  <NFLIcons.CHI />
+  <div className="slider-image" >  <NFLIcons.CHI />
   </div>
-  <div class="slider-image" > <NFLIcons.CIN />
+  <div className="slider-image" > <NFLIcons.CIN />
   </div>
-  <div class="slider-image" ><NFLIcons.CLE />
+  <div className="slider-image" ><NFLIcons.CLE />
   </div>
-  <div class="slider-image" ><NFLIcons.DAL />
+  <div className="slider-image" ><NFLIcons.DAL />
   </div>
-  <div class="slider-image" ><NFLIcons.DEN />
+  <div className="slider-image" ><NFLIcons.DEN />
   </div>
-  <div class="slider-image" ><NFLIcons.DET />
+  <div className="slider-image" ><NFLIcons.DET />
   </div>
-  <div class="slider-image" > <NFLIcons.GB />
+  <div className="slider-image" > <NFLIcons.GB />
   </div>
-  <div class="slider-image" > <NFLIcons.HOU />
+  <div className="slider-image" > <NFLIcons.HOU />
   </div>
-  <div class="slider-image" ><NFLIcons.IND />
+  <div className="slider-image" ><NFLIcons.IND />
   </div>
-  <div class="slider-image" > <NFLIcons.WAS />
+  <div className="slider-image" > <NFLIcons.WAS />
   </div>
-  <div class="slider-image" > <NFLIcons.TEN />
+  <div className="slider-image" > <NFLIcons.TEN />
   </div>
-  <div class="slider-image" ><NFLIcons.TB />
+  <div className="slider-image" ><NFLIcons.TB />
   </div> 
-  <div class="slider-image" > <NFLIcons.SF />
+  <div className="slider-image" > <NFLIcons.SF />
   </div>
-  <div class="slider-image" ><NFLIcons.SEA />
+  <div className="slider-image" ><NFLIcons.SEA />
   </div>
-  <div class="slider-image" ><NFLIcons.PIT />
+  <div className="slider-image" ><NFLIcons.PIT />
   </div>
-  <div class="slider-image" > <NFLIcons.PHI />
+  <div className="slider-image" > <NFLIcons.PHI />
   </div>
-  <div class="slider-image" > <NFLIcons.NYJ />
+  <div className="slider-image" > <NFLIcons.NYJ />
   </div>
-  <div class="slider-image" > <NFLIcons.NYG />
+  <div className="slider-image" > <NFLIcons.NYG />
   </div>
-  <div class="slider-image" > <NFLIcons.NO />
+  <div className="slider-image" > <NFLIcons.NO />
   </div> 
-  <div class="slider-image" >  <NFLIcons.NE />
+  <div className="slider-image" >  <NFLIcons.NE />
   </div>
-  <div class="slider-image" ><NFLIcons.MIA />
+  <div className="slider-image" ><NFLIcons.MIA />
   </div>
-  <div class="slider-image" > <NFLIcons.LV />
+  <div className="slider-image" > <NFLIcons.LV />
   </div>
-  <div class="slider-image" ><NFLIcons.LAR />
+  <div className="slider-image" ><NFLIcons.LAR />
   </div>
-  <div class="slider-image" > <NFLIcons.LAC />
+  <div className="slider-image" > <NFLIcons.LAC />
   </div>
-  <div class="slider-image" > <NFLIcons.KC />
+  <div className="slider-image" > <NFLIcons.KC />
   </div>
-  <div class="slider-image" > <NFLIcons.JAX />
+  <div className="slider-image" > <NFLIcons.JAX />
   </div>
 
 </div>
@@ -108,7 +109,7 @@ const Home = () => {
 
 
     </div>
-      
+      </>
     );
   }
   
