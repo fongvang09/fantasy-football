@@ -1,9 +1,14 @@
 const express = require("express");
-
 const mongoose = require("mongoose");
 const routes = require("./routes");
+const passport = require("passport");
+const facebookStrategy = require("passport-facebook").Strategy;
+
 const app = express();
 const PORT = process.env.PORT || 3001;
+
+// Creates passport strategies for Google and Facebook
+
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -17,10 +22,10 @@ if (process.env.NODE_ENV === "production") {
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/fantasy_teams");
 
 // Add routes, both API and view
-// app.use(routes);
-app.use("/route", (req, res)=>{
-  res.send("message from the backend")
-})
+app.use(routes);
+// app.use("/route", (req, res)=>{
+//   res.send("message from the backend")
+// })
 
 // Start the API server
 app.listen(PORT, function() {
