@@ -1,19 +1,15 @@
-// const path = require("path");
-// const { router } = require("express");
-
-// // router.use("/api", apiRoutes);
-
-
-// router.use(function(req, res) {
-//   res.sendFile(path.join(__dirname, "../client/build/index.html"));
-// });
-
-// module.exports = router;
-
 var path = require("path");
+var apiRoutes = require("./api");
+var app = require("express").Router();
 
-module.exports = function(app) {
-  app.get("*", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/index.html"));
-  });
-};
+app.get("/", function(req, res) {
+  res.sendFile(path.join(__dirname, "../public/index.html"));
+});
+
+app.use("/api", apiRoutes);
+
+app.get("/team", function(req, res) {
+  res.sendFile(path.join(__dirname, "../public/index.html"));
+});
+
+module.exports = app;
