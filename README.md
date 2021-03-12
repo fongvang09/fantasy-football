@@ -20,7 +20,8 @@ The Fantasy Football Application Utlizes the following:
 - React
 - JavaScript
 - Axios
-- Yahoo Fantasy Football API
+- Fantasy Football API
+- NFL React-Logo 
 
 ## Contributers
 - Kelsey Bergstrom  (https://github.com/BergstromKelsey)
