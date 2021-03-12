@@ -1,25 +1,36 @@
-header {
+/* header {
   padding: 0px;
-  margin-top:-50px;
+  margin-top:0px;
   background-color:black;
   opacity:0.7 !important;
+  font-family: 'Prata', serif;
   }
+   */
+
+  h1{
+    margin-top:10px;
+    font-size:60px;
+    color:black;
+    font-family: 'Prata', serif;
   
-  h1 {
-    font-size:75px;
-    color:white;
-    text-align: center;
   }
-  
-  
+
   .maindiv {
     float: none;
-    margin: 0 auto;
+    margin-top:40px;
+    /* margin: 0 auto; */
     background-color:white;
-    opacity:0.7 !important;
+    background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
+    background: rgba(204, 204, 204, 0.5);
     color: black;
     height: 50vh;
     width:150vh;
+    font-family: 'Prata', serif;
+    padding: 20px;
+    padding-right: 20px; 
+    padding-left:  20px;
+    
+    box-shadow: 5px 10px black;
   
   }
 
@@ -31,23 +42,41 @@ header {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    font-family: 'Prata', serif;
     }
     
-  .divMain {
+    .btn{
+      background-color:white;
+      background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
+      background: rgba(204, 204, 204, 0.5);
+      border: 2px solid black;
+      color: black;
+      cursor: football;  
     
-    background-color: grey;
-    opacity:0.7;
-    margin: 0 auto;
-    height: 50vh;
-    width:150vh;
+  }
+  
+
+#findinput{    
+  background-color:white;
+  border: 2px solid black;
+  color: black;
+  cursor: football;  
+
+
+}
+
+  .navbar{
+    background-color:white;
+    background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
+    background: rgba(204, 204, 204, 0.5);
+    font-family: 'Prata', serif;
+    font-size:8px;
     
-    }
+    } 
 
-
-
-
-
-
+.navbar-brand{
+  font-size:14px;
+}
 
 
 

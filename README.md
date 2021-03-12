@@ -2,7 +2,7 @@
 
 
 ## Description
-The Fantasy Football application is a dream application for any user who loves football! This application allows the user to choose and create a team of their favorite professional football players. Users can even play their team against their friends & familys teams! 
+The Fantasy Football application is a dream application for any user who loves football! This application allows the user to choose and create a custom team of their favorite professional football players! 
 
 
 ## Screenshots
@@ -30,6 +30,7 @@ The Fantasy Football Application Utlizes the following:
 
 ## Usage 
 The application can be accessed via Heroku: 
+https://stormy-reaches-02847.herokuapp.com/
 
 ## Links
 https://stormy-reaches-02847.herokuapp.com/

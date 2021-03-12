@@ -9,20 +9,20 @@ const Home = () => {
     }, [])
     return (
         <>
-        <h1>Welcome To Fantasy-Football</h1>
-      <div className="container divMain">
-          
-          
+       
+      <div className="container maindiv">
+        
+       <h2><center>An App for creating your very own, personalized dream team</center></h2>
+          <form class="form-inline my-2 my-lg-0">
+            <input id="findinput" class="form-control mr-sm-2" type="search" placeholder="Find A Player" aria-label="Search"/>
+      
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
           
           
       </div>
-      <br/>
-      <div className="container">
-      <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Find A Player" aria-label="Search"/>
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
-          </div>
+      
+   
       </>
     );
   }
