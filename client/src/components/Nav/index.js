@@ -27,7 +27,7 @@ function Nav() {
               <span class="navbar-toggler-icon"></span>
             </button>
             
-            <h1>Fantasy-Football</h1>
+            
           </li>
         </ul>
 
