@@ -18,19 +18,16 @@
   .maindiv {
     float: none;
     margin-top:40px;
-    /* margin: 0 auto; */
     background-color:white;
     background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
     background: rgba(204, 204, 204, 0.5);
     color: black;
-    height: 50vh;
-    /* width:150vh; */
+    height: 50%;
     width:100%;
     font-family: 'Prata', serif;
     padding: 20px;
     padding-right: 20px; 
     padding-left:  20px;
-    
     box-shadow: 5px 10px black;
   
   }
@@ -53,9 +50,21 @@
       background: rgba(204, 204, 204, 0.5);
       border: 2px solid black;
       color: black;
-      cursor: football;  
-    
+      height:30px;
+      font-size:14px;
   }
+
+  .btntwo{
+    background-color:white;
+    background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
+    background: rgba(204, 204, 204, 0.5);
+    border: 2px solid black;
+    color: black;
+    height:30px;
+    font-size:14px;
+    
+}
+  
   
 
 #findinput{    
@@ -63,6 +72,11 @@
   border: 2px solid black;
   color: black;
   cursor: football;  
+  margin-left:auto;
+  margin-bottom:5px;
+  width:300px;
+
+  
 
 
 }
@@ -146,3 +160,23 @@ position: relative;
   }
 } */
 
+.divided {
+  display: flex;
+  align-items: center;
+}
+.divider {
+  flex-grow: 1;
+  border-bottom: 1px solid black; 
+  margin: 0px
+}
+
+
+.btn:hover,.btntwo:hover {
+  background-color:gray;
+  border-color:black;
+  color:white;
+}
+
+#top:hover{
+  color:white;
+}

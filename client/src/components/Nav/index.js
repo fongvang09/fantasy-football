@@ -14,9 +14,9 @@ function Nav() {
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item active">
-            <Link className="navbar-brand" to="/">Home <span class="sr-only">(current)</span></Link></li>
+            <Link id= "top" className="navbar-brand" to="/">Home <span class="sr-only">(current)</span></Link></li>
 
-          <li><Link className="navbar-brand" to="/team">Your Team <span class="sr-only">(current)</span></Link></li>
+          <li><Link id= "top" className="navbar-brand" to="/team">Your Team <span class="sr-only">(current)</span></Link></li>
            
            <li><LoginButton /></li>
            <li><LogoutButton /></li>
