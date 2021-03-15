@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import API from "../utils/API.js"
+import "../styles/Home.css"
 
 import * as NFLIcons from 'react-nfl-logos';
 
@@ -19,7 +20,9 @@ const Home = () => {
         
         
        <h2><center>An App for creating your very own dream team</center></h2>
-          <form className="form-inline my-2 my-lg-0">
+       <br/>
+       <br/>
+          <form className="form-inline my-2 my-lg-0 searchField">
             <input id="findinput" className="form-control mr-sm-2" type="search" placeholder="Find A Player" aria-label="Search"/>
       
             <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>

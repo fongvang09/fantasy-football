@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import LoginButton from '../Login';
+import LogoutButton from '../Logout';
 
 function Nav() {
   return (
@@ -13,15 +14,16 @@ function Nav() {
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item active">
-            <Link className="navbar-brand" to="/">Home <span class="sr-only">(current)</span></Link>
-          </li>
+            <Link className="navbar-brand" to="/">Home <span class="sr-only">(current)</span></Link></li>
 
           <li><Link className="navbar-brand" to="/team">Your Team <span class="sr-only">(current)</span></Link></li>
+           
+           <li><LoginButton /></li>
+           <li><LogoutButton /></li>
+           
             
 
-            {/* I ADDED LOGOUT BUTTON.. DO WE WANT ONE OF THESE YALL? */}
-           <li><LoginButton /></li>
-           <li><Link className="navbar-brand" to="/">Log out<span class="sr-only">(current)</span></Link></li>
+           
             
             
             
