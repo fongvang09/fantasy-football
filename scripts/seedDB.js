@@ -7,7 +7,7 @@ mongoose.connect(
   "mongodb://localhost/fantasy_teams", { useNewUrlParser: true, useUnifiedTopology: true }
 );
 
-const teamSeed = axios.get(`https://www.fantasyfootballnerd.com/service/players/json/${process.env.API_KEY}`);
+const teamSeed = axios.get(`https://www.fantasyfootballnerd.com/service/players/json/${API_KEY}`);
 // [
 //   {
 //     name: "Golden Goofers",
