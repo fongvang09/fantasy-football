@@ -21,29 +21,29 @@ const Home = () => {
     // console.log(NFLIcons)
     return (
       <>
-      {/* <h1>Fantasy-Football</h1> */}
+    
       <div className="container maindiv">
         
         
-       <h2><center>An App for creating your very own dream team</center></h2>
+       <center><h1>Fantasy Football</h1>
+       <p class="divided">
+        <span class="divider"></span>
+    </p>
+
+
+      <h4>Create your very own dream team</h4>
        <br/>
-       <br/>
-          <form className="form-inline my-2 my-lg-0 searchField">
-            <input id="findinput" className="form-control mr-sm-2" type="search" placeholder="Find A Player" aria-label="Search"/>
-      
-            <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+       
+         <form className=" my-2 my-lg-0 searchField">
+            <input id="findinput" className="mr-sm-2" type="search" placeholder="Find A Player" aria-label="Search"/>
+    
+            <button className="btntwo my-2 my-sm-0" type="submit">Search</button>
           </form>
-          
-          
+        
+      <br/>
+    
      
-      <br/>
-      <br/>
-      <br/>
-
-      <br/>
-      <br/>
-      <br/>
-
+      </center>
   <section className="slider-container">
  <div className="image-container">
   <div className="slider-image" ><NFLIcons.ARI />
