@@ -4,6 +4,9 @@ const teamController = require("../../controllers/indexController");
 
 router.route("/")
     .get(teamController.findAll)
-    .post(teamController.create);
+    .post(teamController.create)
+
+router.route("/players")
+    .get(teamController.findAll)
 
 module.exports = router;

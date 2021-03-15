@@ -8,10 +8,16 @@ const Home = () => {
     useEffect(()=>{
         console.log("message from frontend")
         API.getMessage().then(message=>{
-            console.log(message)
+            console.log(message.data)
         })
     }, [])
-    console.log(NFLIcons)
+    useEffect(() => {
+        console.log("useEffect2");
+        // API.getPlayers().then(player => {
+        //     console.log(player);
+        // })
+    }, [])
+    // console.log(NFLIcons)
     return (
       <>
       {/* <h1>Fantasy-Football</h1> */}
