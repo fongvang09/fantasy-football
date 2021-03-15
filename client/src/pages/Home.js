@@ -12,12 +12,16 @@ const Home = () => {
             console.log(message.data)
         })
     }, [])
-    useEffect(() => {
-        console.log("useEffect2");
-        // API.getPlayers().then(player => {
-        //     console.log(player);
-        // })
-    }, [])
+    // useEffect(() => {
+    //     console.log("useEffect2");
+    //     API.getPlayers()
+    //       .then(player => {
+    //           console.log(player);
+    //       })
+    //       .catch(err => {
+    //         console.log(err);
+    //       })
+    // }, [])
     // console.log(NFLIcons)
     return (
       <>

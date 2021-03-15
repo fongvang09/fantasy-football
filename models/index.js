@@ -1,3 +1,4 @@
 module.exports = {
-    Team: require("./team")
+    Team: require("./team"),
+    Players: require("./players")
 };
