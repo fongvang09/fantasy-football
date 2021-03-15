@@ -9,10 +9,20 @@ const Home = () => {
     useEffect(()=>{
         console.log("message from frontend")
         API.getMessage().then(message=>{
-            console.log(message)
+            console.log(message.data)
         })
     }, [])
-    console.log(NFLIcons)
+    // useEffect(() => {
+    //     console.log("useEffect2");
+    //     API.getPlayers()
+    //       .then(player => {
+    //           console.log(player);
+    //       })
+    //       .catch(err => {
+    //         console.log(err);
+    //       })
+    // }, [])
+    // console.log(NFLIcons)
     return (
       <>
     

@@ -1,40 +1,30 @@
 const mongoose = require("mongoose");
 const db = require("../models");
+const axios = require("axios");
 
 mongoose.connect(
   process.env.MONGODB_URI ||
   "mongodb://localhost/fantasy_teams", { useNewUrlParser: true, useUnifiedTopology: true }
 );
+let teamSeed;
 
-const teamSeed = [
-  {
-    name: "Golden Goofers",
-    owner: "Evan Furniss",
-    record: "0-9",
-    players: [
-      {
-        firstName: "Kirk",
-        lastName: "Cousins",
-        position: "Quarterback",
-        points: 9
-      },
-      {
-        firstName: "Adrian",
-        lastName: "Peterson",
-        position: "Running Back",
-        points: 10
-      },
-    ]
-  }
-]
-db.Team
-  .deleteMany({})
-  .then(() => db.Team.collection.insertMany(teamSeed))
-  .then(data => {
-    console.log(data.result.n + " records inserted!");
-    process.exit(0);
+axios.get(`https://www.fantasyfootballnerd.com/service/players/json/test`)
+  .then(res => {
+    teamSeed = res.data.Players.filter(player => player.active == "1");
+  })
+  .then(res => {
+    db.Players
+      .deleteMany({})
+      .then(() => db.Players.collection.insertMany(teamSeed))
+      .then(data => {
+        console.log(data.result.n + " records inserted!");
+        process.exit(0);
+      })
+      .catch(err => {
+        console.error(err);
+        process.exit(1);
+      });
   })
   .catch(err => {
-    console.error(err);
-    process.exit(1);
-  });
+    console.log(err);
+  })
