@@ -7,6 +7,6 @@ router.route("/")
     .post(teamController.create)
 
 router.route("/players")
-    .get(teamController.findAll)
+    .get(teamController.findAllPlayers)
 
 module.exports = router;

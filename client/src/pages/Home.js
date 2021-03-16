@@ -1,27 +1,34 @@
 import React, { useEffect } from "react";
 import API from "../utils/API.js"
 import "../styles/Home.css"
+import PlayerCard from "../components/PlayerCard"
 
 import * as NFLIcons from 'react-nfl-logos';
-
+let playerObj;
 
 const Home = () => {
-    useEffect(()=>{
-        console.log("message from frontend")
-        API.getMessage().then(message=>{
-            console.log(message.data)
-        })
-    }, [])
-    // useEffect(() => {
-    //     console.log("useEffect2");
-    //     API.getPlayers()
-    //       .then(player => {
-    //           console.log(player);
-    //       })
-    //       .catch(err => {
-    //         console.log(err);
-    //       })
+    // useEffect(()=>{
+    //     console.log("message from frontend")
+    //     API.getMessage().then(message=>{
+    //         console.log(message.data)
+    //     })
     // }, [])
+    useEffect(() => {
+        API.getPlayers()
+          .then(players => {
+              players.data.forEach(player => {
+                playerObj = {
+                  name: player.displayName,
+                  position: player.position,
+                  team: player.team
+                }
+                document.getElementById("players-list").append(<PlayerCard name={playerObj.name} position={playerObj.position} team={playerObj.team} />)
+              })
+          })
+          .catch(err => {
+            console.log(err);
+          })
+    }, [])
     // console.log(NFLIcons)
     return (
       <>
@@ -121,6 +128,9 @@ const Home = () => {
 </section>
 
 
+    </div>
+    <div id="players-list">
+      
     </div>
       </>
     );
