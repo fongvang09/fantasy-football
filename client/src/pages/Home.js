@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
-import API from "../utils/API.js"
-import "../styles/Home.css"
-import PlayerCard from "../components/PlayerCard"
+import API from "../utils/API.js";
+import "../styles/Home.css";
+import PlayerCard from "../components/PlayerCard";
+import Players from "../components/Players";
 
 import * as NFLIcons from 'react-nfl-logos';
 let playerObj;
@@ -37,8 +38,8 @@ const Home = () => {
         
         
        <center><h1>Fantasy Football</h1>
-       <p class="divided">
-        <span class="divider"></span>
+       <p className="divided">
+        <span className="divider"></span>
     </p>
 
 
@@ -52,7 +53,7 @@ const Home = () => {
           </form>
         
       <br/>
-    
+    <Players />
      
       </center>
   <section className="slider-container">

@@ -2,7 +2,7 @@ import React from "react";
 import './index.css';
 import Home from './pages/Home';
 import Team from './pages/Team';
-import Inputpage from './pages/Login';
+// import Inputpage from './pages/Login';
 import Nav from './components/Nav';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 // import { useAuth0 } from '@auth0/auth0-react';
