@@ -21,12 +21,6 @@ function Nav() {
            <li><LoginButton /></li>
            <li><LogoutButton /></li>
            
-            
-
-           
-            
-            
-            
         </ul>
 
 

@@ -1,11 +1,4 @@
-/* header {
-  padding: 0px;
-  margin-top:0px;
-  background-color:black;
-  opacity:0.7 !important;
-  font-family: 'Prata', serif;
-  }
-   */
+
 
   h1{
     margin-top:10px;
@@ -15,7 +8,7 @@
   
   }
 
-  .maindiv {
+  .maindiv, #players-list {
     float: none;
     margin-top:40px;
     background-color:white;
@@ -28,9 +21,10 @@
     padding: 20px;
     padding-right: 20px; 
     padding-left:  20px;
-    box-shadow: 5px 10px black;
-  
+    box-shadow: 5px 10px black; 
+
   }
+  
 
 
   body {
@@ -86,12 +80,13 @@
     background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
     background: rgba(204, 204, 204, 0.5);
     font-family: 'Prata', serif;
-    font-size:8px;
+    font-size:16px;
+    
     
     } 
 
 .navbar-brand{
-  font-size:14px;
+  font-size:16px;
 }
 
 
@@ -179,4 +174,5 @@ position: relative;
 
 #top:hover{
   color:white;
+  
 }
