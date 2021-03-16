@@ -16,6 +16,10 @@ function Nav() {
           <li><Link id="top" className="navbar-brand" to="/team">Your Team <span className="sr-only">(current)</span></Link></li>
           <li><LoginButton /></li>
           <li><LogoutButton /></li>
+            <Link id= "top" className="navbar-brand" to="/">Home <span class="sr-only">(current)</span></Link></li>
+          <li><Link id= "top" className="navbar-brand" to="/team">Your Team <span class="sr-only">(current)</span></Link></li>
+           <li><LoginButton /></li>
+           <li><LogoutButton /></li>
         </ul>
       </div>
     </nav>

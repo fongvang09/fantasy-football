@@ -43,11 +43,11 @@ const Home = () => {
     </p>
 
 
-      <h4>Create your very own dream team</h4>
-       <br/>
+      <h4>Create your dream team.</h4>
+       
        
          <form className=" my-2 my-lg-0 searchField">
-            <input id="findinput" className="mr-sm-2" type="search" placeholder="Find A Player" aria-label="Search"/>
+            <input id="findinput" className="mr-sm-2" type="search" placeholder="Find a Player" aria-label="Search"/>
     
             <button className="btntwo my-2 my-sm-0" type="submit">Search</button>
           </form>
@@ -58,7 +58,7 @@ const Home = () => {
       </center>
   <section className="slider-container">
  <div className="image-container">
-  <div className="slider-image" ><NFLIcons.ARI />
+ <div className="slider-image" ><NFLIcons.ARI />
   </div>
   <div className="slider-image" ><NFLIcons.MIN />
   </div>
