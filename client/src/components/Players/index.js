@@ -20,7 +20,7 @@ const Players = () => {
   // Loads all teams and sets them to teams
   function loadPlayers() {
     API.getPlayers()
-      .then(res => 
+      .then(res =>
         setTeams(res.data)
       )
       .catch(err => console.log(err));
@@ -36,7 +36,7 @@ const Players = () => {
   // Handles updating component state when the user types into the input field
   function handleInputChange(event) {
     const { name, value } = event.target;
-    setFormObject({...formObject, [name]: value})
+    setFormObject({ ...formObject, [name]: value })
   };
 
   // When the form is submitted, use the API.savePlayer method to save the player data
@@ -55,26 +55,19 @@ const Players = () => {
   return (
     <>
 
-      <div className="container maindiv">
-        <center>
-          <h3>Find a player</h3>
-        </center>
-        <p className="divided">
-          <span className="divider"></span>
-        </p>
+      <div className="container">
+
 
         <form>
           <Input
             onChange={handleInputChange}
             name="player"
-            placeholder="Player"
+            placeholder="NEW INPUT BOX(PLAYER/INDEX.JS)"
           />
-          <FormBtn
-            disabled={!(formObject.player)}
-            onClick={handleFormSubmit}
-          >
-            Draft Player
-          </FormBtn>
+
+
+          {/* FormBtn was here. moved below to be on list instead of next to it  */}
+
         </form>
 
         {teams.length ? (
@@ -91,12 +84,24 @@ const Players = () => {
                   </strong>
                 </Link>
                 <DeleteBtn onClick={() => deletePlayer(player._id)} />
+
+
+                <FormBtn
+                  disabled={!(formObject.player)}
+                  onClick={handleFormSubmit}
+                >
+                  Draft Player
+          </FormBtn>
+
+
+
+
               </ListItem>
             ))}
           </List>
         ) : (
-          <h3>No Results to Display</h3>
-        )}
+            <h3>No Results to Display</h3>
+          )}
       </div>
     </>
   );
