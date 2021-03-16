@@ -8,7 +8,7 @@
   
   }
 
-  .maindiv, #players-list {
+  .maindiv {
     float: none;
     margin-top:40px;
     background-color:white;
@@ -16,7 +16,7 @@
     background: rgba(204, 204, 204, 0.5);
     color: black;
     height: 50%;
-    width:100%;
+    width:70%;
     font-family: 'Prata', serif;
     padding: 20px;
     padding-right: 20px; 
@@ -58,11 +58,26 @@
     font-size:14px;
     
 }
-  
+ 
+.btnthree{
+  background-color:white;
+  background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
+  background: rgba(204, 204, 204, 0.5);
+  border: 2px solid black;
+  color: black;
+  height:30px;
+  font-size:14px;
+ float:right;
+ margin-right:15px;
+
+
+
+}
   
 
-#findinput{    
-  background-color:white;
+#findinput, #playerinput{    
+  background: white;
+  background: rgba(255, 255, 255, 0.9);
   border: 2px solid black;
   color: black;
   cursor: football;  
@@ -166,7 +181,7 @@ position: relative;
 }
 
 
-.btn:hover,.btntwo:hover {
+.btn:hover,.btntwo:hover,.btnthree:hover {
   background-color:gray;
   border-color:black;
   color:white;
@@ -175,4 +190,7 @@ position: relative;
 #top:hover{
   color:white;
   
+}
+.card-body{
+  background-color:red;
 }

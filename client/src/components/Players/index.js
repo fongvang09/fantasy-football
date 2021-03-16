@@ -23,10 +23,6 @@ const Players = () => {
         setDisplayState([...display, teams])
         // console.log(teams);
       })
-        // .then(res => {
-        // // setDisplayState(teams)
-        // console.log(teams);
-        // })
       .catch(err => console.log(err));
   };
   // Deletes a player from the database with a given id, then reloads teams from the db
@@ -38,21 +34,13 @@ const Players = () => {
   // Handles updating component state when the user types into the input field
   function handleInputChange(event) {
     const { name, value } = event.target;
-    // console.log(name,value);
     setFormObject({[name]:value})
-    // console.log(formObject);
     searchPlayer(formObject[name]);
-
   };
   function searchPlayer(search) {
-      // console.log(search);
       let teamList = teams[0]
-      // console.log(teamList);
-    // const searchValue = search.toLowerCase().trim();
-    // || player.position === search || player.team === search
     var searchResults = teamList.filter(player => player.displayName.includes(search) || player.position.includes(search) || player.team.includes(search))
-    // console.log(searchResults);
-    if (searchResults == ""){
+    if (searchResults == "undefined"){
       loadPlayers()
     } else {
       setTeams(searchResults)
@@ -79,18 +67,15 @@ const Players = () => {
         <p className="divided">
           <span className="divider"></span>
         </p>
+      </div>
+      <div className="container">
         <form>
           <Input
             onChange={handleInputChange}
             name="player"
-            placeholder="Player"
+            placeholder="NEW INPUT BOX(PLAYER/INDEX.JS)"
           />
-          <FormBtn
-            disabled={!(formObject.player)}
-            onClick={handleFormSubmit}
-          >
-            Draft Player
-          </FormBtn>
+         {/* FormBtn was here. moved below to be on list instead of next to it  */}
         </form>
         {teams[0].length ? (
           <List>
@@ -106,12 +91,18 @@ const Players = () => {
                   </strong>
                 </Link>
                 <DeleteBtn onClick={() => deletePlayer(player._id)} />
+                <FormBtn
+                  disabled={!(formObject.player)}
+                  onClick={handleFormSubmit}
+                >
+                  Draft Player
+          </FormBtn>
               </ListItem>
             ))}
           </List>
         ) : (
-          <h3>No Results to Display</h3>
-        )}
+            <h3>No Results to Display</h3>
+          )}
       </div>
     </>
   );

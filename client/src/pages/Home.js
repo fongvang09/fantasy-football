@@ -45,14 +45,14 @@ const Home = () => {
 
       <h4>Create your dream team.</h4>
        
-       
-         <form className=" my-2 my-lg-0 searchField">
-            <input id="findinput" className="mr-sm-2" type="search" placeholder="Find a Player" aria-label="Search"/>
-    
+       {/* COMMENTED THIS INPUT BOX OUT BECAUSE ITS THE OLDER, INITAL ONE. USING PLAYER.JS INPUT BOX*/}
+         {/* <form className=" my-2 my-lg-0 searchField">
+            <input id="findinput" className="mr-sm-2" type="search" placeholder="ORIGINAL (ON pages/HOME.JS)" aria-label="Search"/> */}
+{/*     
             <button className="btntwo my-2 my-sm-0" type="submit">Search</button>
           </form>
-        
-      <br/>
+         */}
+     
     <Players />
      
       </center>
