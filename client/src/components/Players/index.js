@@ -4,41 +4,60 @@ import DeleteBtn from "../DeleteBtn";
 import { Input, FormBtn } from "../Form";
 import { Link } from "react-router-dom";
 import API from "../../utils/API";
-
-
-
+// import { load } from "dotenv/types";
 const Players = () => {
   // Setting our component's initial state
-  const [teams, setTeams] = useState([])
+  let [teams, setTeams] = useState([])
   const [formObject, setFormObject] = useState({})
-
+  const [display, setDisplayState] = useState([])
   // Load all teams and store them with setTeams
   useEffect(() => {
     loadPlayers()
   }, [])
-
   // Loads all teams and sets them to teams
   function loadPlayers() {
     API.getPlayers()
-      .then(res => 
-        setTeams(res.data)
-      )
+      .then(res => {
+        setTeams([...teams, res.data])
+        // displayPlayers()
+        setDisplayState([...display, teams])
+        // console.log(teams);
+      })
+        // .then(res => {
+        // // setDisplayState(teams)
+        // console.log(teams);
+        // })
       .catch(err => console.log(err));
   };
-
   // Deletes a player from the database with a given id, then reloads teams from the db
   function deletePlayer(id) {
     API.deletePlayer(id)
       .then(res => loadPlayers())
       .catch(err => console.log(err));
   }
-
   // Handles updating component state when the user types into the input field
   function handleInputChange(event) {
     const { name, value } = event.target;
-    setFormObject({...formObject, [name]: value})
-  };
+    // console.log(name,value);
+    setFormObject({[name]:value})
+    // console.log(formObject);
+    searchPlayer(formObject[name]);
 
+  };
+  function searchPlayer(search) {
+      // console.log(search);
+      let teamList = teams[0]
+      // console.log(teamList);
+    // const searchValue = search.toLowerCase().trim();
+    // || player.position === search || player.team === search
+    var searchResults = teamList.filter(player => player.displayName.includes(search) || player.position.includes(search) || player.team.includes(search))
+    // console.log(searchResults);
+    if (searchResults == ""){
+      loadPlayers()
+    } else {
+      setTeams(searchResults)
+    }
+  }
   // When the form is submitted, use the API.savePlayer method to save the player data
   // Then reload players from the database
   function handleFormSubmit(event) {
@@ -51,10 +70,8 @@ const Players = () => {
         .catch(err => console.log(err));
     }
   };
-
   return (
     <>
-
       <div className="container maindiv">
         <center>
           <h3>Find a player</h3>
@@ -62,7 +79,6 @@ const Players = () => {
         <p className="divided">
           <span className="divider"></span>
         </p>
-
         <form>
           <Input
             onChange={handleInputChange}
@@ -76,8 +92,7 @@ const Players = () => {
             Draft Player
           </FormBtn>
         </form>
-
-        {teams.length ? (
+        {teams[0].length ? (
           <List>
             {teams.map(player => (
               <ListItem key={player._id}>
@@ -101,5 +116,4 @@ const Players = () => {
     </>
   );
 }
-
 export default Players;
