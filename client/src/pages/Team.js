@@ -9,8 +9,8 @@ const Team = () => {
         <center>
       <h3>Current Team</h3>
       </center>
-      <p class="divided">
-        <span class="divider"></span>
+      <p className="divided">
+        <span className="divider"></span>
     </p>
      
 
