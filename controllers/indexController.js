@@ -7,17 +7,17 @@ module.exports = {
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },
+    findOne: function (req, res){
+        db.Team
+            .findOne({ owner: req.params.id})
+            .then(dbModel => res.json(dbModel))
+            .catch(err => res.status(422).json(err))
+    },
     create: function(req, res) {
         db.Team
             .create(req.body)
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
-    },
-    findAllPlayers: function (req, res) {
-        db.Players
-            .find(req.query)
-            .then(playerInfo => res.json(playerInfo))
-            .catch(err => res.status(422).json(err))
     },
     savePlayer: function (req, res) {
         let myPlayer = {
@@ -28,6 +28,12 @@ module.exports = {
         }
         db.Team
             .findOneAndUpdate({ owner: req.body.owner }, { $push: { players: myPlayer } })
+            .then(playerInfo => res.json(playerInfo))
+            .catch(err => res.status(422).json(err))
+    },
+    findAllPlayers: function (req, res) {
+        db.Players
+            .find(req.query)
             .then(playerInfo => res.json(playerInfo))
             .catch(err => res.status(422).json(err))
     },

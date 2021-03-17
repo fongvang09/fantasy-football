@@ -1,8 +1,46 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import * as NFLIcons from 'react-nfl-logos';
+import { useAuth0 } from "@auth0/auth0-react";
+import { List, ListItem } from "../components/List";
+import DeleteBtn from "../components/DeleteBtn";
+// import { Link } from "react-router-dom";
+import API from "../utils/API";
 
 const Team = () => {
-    return (
+  const { user } = useAuth0();
+  const { loginWithRedirect } = useAuth0();
+
+  const [teamPlayers, setTeamPlayers] = useState([]);
+  const [team, setTeam] = useState({});
+  useEffect(()=> {
+    checkUserLogin()
+  }, [])
+
+  function checkUserLogin() {
+    if(!user){
+      loginWithRedirect()
+    } else {
+      getUserTeam();
+    }
+  }
+
+  function getUserTeam(){
+    API.getTeam(user.name)
+      .then(res => {
+        setTeam(res.data)
+        setTeamPlayers(res.data.players);
+      })
+  }
+
+  // function populateData(team){
+  //   if(!team){
+  //     console.log("no team, gotta sign up");
+  //   } else {
+  //     console.log(team);
+  //   }
+  // }
+
+  return (
         <>
       
       <div className="container maindiv">
@@ -12,12 +50,30 @@ const Team = () => {
       <p className="divided">
         <span className="divider"></span>
     </p>
+    <div className="container">
+    <center>
+      <h4>{team.name}</h4>
+    </center>
+    {user ? (
+    <List>
+      {teamPlayers.map(player => (
+        <ListItem key={user.name}>
+          <strong>
+            {player.firstName + " " + player.lastName + " "}
+            {player.team + " "}
+            {player.position + " "}
+          </strong>
+          <DeleteBtn /> 
+        </ListItem>
+      ))}
+    </List>) : (<h3>No Results to Display</h3>)}
+    </div>
      
 
 
       <section className="slider-container">
- <div className="image-container">
- <div className="slider-image" ><NFLIcons.ARI />
+  <div className="image-container">
+  <div className="slider-image" ><NFLIcons.ARI />
   </div>
   <div className="slider-image" ><NFLIcons.MIN />
   </div>

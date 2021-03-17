@@ -46,9 +46,7 @@ const Players = () => {
   // Then reload players from the database
   function handleFormSubmit(event) {
     event.preventDefault();
-    console.log(event.target.id);
-    let myPlayer = players.filter(player=> event.target.id===player._id)[0]
-
+    let myPlayer = players.filter(player => event.target.id===player._id)[0]
       API.savePlayer({
         player: myPlayer,
         owner: user.name
@@ -79,7 +77,6 @@ const Players = () => {
                     {player.displayName + " "}
                     {player.team + " "}
                     {player.position + " "}
-                    {/* {player.playerId + " "} */}
                   </strong>
                 </Link>
 
@@ -94,7 +91,7 @@ const Players = () => {
 
                   
                 >
-               <PlusBtn/>
+               <PlusBtn id={player._id} onClick={handleFormSubmit}/>
           </FormBtn>
          
 

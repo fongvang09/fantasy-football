@@ -6,6 +6,9 @@ router.route("/")
     .get(teamController.findAll)
     .post(teamController.create)
 
+router.route("/team/:id")
+    .get(teamController.findOne)
+
 router.route("/players")
     .get(teamController.findAllPlayers)
     .post(teamController.savePlayer)

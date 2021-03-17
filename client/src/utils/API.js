@@ -1,20 +1,27 @@
 import axios from "axios";
 
 export default {
-    getMessage: () => axios.get("/route"),
+    //return all players
     getPlayers: () => axios.get("/api/players"),
 
-    // Gets the book with the given id
+    // Gets the player with the given id
     getPlayer: function (id) {
         return axios.get("/api/players/" + id);
+    },
+
+    // Gets team by user log in name
+    getTeam: function(id) {
+        return axios.get("/api/team/" + id)
     },
 
     // Deletes the player with the given id
     deletePlayer: function (id) {
         return axios.delete("/api/players/" + id);
     },
+
     // Saves a player to the database
     savePlayer: function (playerData) {
+        console.log(playerData);
         return axios.post("/api/players", playerData);
     }
 };

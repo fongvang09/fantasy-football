@@ -3,9 +3,9 @@ import "./style.css";
 
 function PlusBtn(props) {
   return (
-    <span className="plus-btn" {...props}  tabIndex="0" role="button">
- <span id="plus-btn">+</span>
-    </span>
+    <button className="plus-btn" {...props}  tabIndex="0" role="button">
+    <span>{props.children}+</span>
+    </button>
   );
 }
 
