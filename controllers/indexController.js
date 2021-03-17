@@ -19,4 +19,16 @@ module.exports = {
             .then(playerInfo => res.json(playerInfo))
             .catch(err => res.status(422).json(err))
     },
+    savePlayer: function (req, res) {
+        let myPlayer = {
+            firstName: req.body.player.fname,
+            lastName: req.body.player.lname,
+            position: req.body.player.position,
+            team: req.body.player.team
+        }
+        db.Team
+            .findOneAndUpdate({ owner: req.body.owner }, { $push: { players: myPlayer } })
+            .then(playerInfo => res.json(playerInfo))
+            .catch(err => res.status(422).json(err))
+    },
 }
