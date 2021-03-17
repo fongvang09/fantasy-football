@@ -24,10 +24,7 @@ export function TextArea(props) {
 export function FormBtn(props) {
   return (
     <button {...props} style={{  marginBottom: 5 }} className="btnthree">
-      {props.children}
+      {props.children} +
     </button>
   );
 }
-
-
-// btn-success

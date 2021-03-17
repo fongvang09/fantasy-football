@@ -48,7 +48,7 @@ const Players = () => {
     let myPlayer = players.filter(player => event.target.id===player._id)[0]
       API.savePlayer({
         player: myPlayer,
-        owner: user.name
+        owner: user.email
       })
         .then(res => console.log(res))
         .catch(err => console.log(err));
@@ -80,7 +80,7 @@ const Players = () => {
                 </Link>
 
                {/*  DeleteBtn BELOW BECAUSE IT NEEDS TO BE MOVED TO THE TEAMS PAGE, ALONG WITH THE IMPORT ABOVE */}
-                <DeleteBtn onClick={() => deletePlayer(player._id)} /> 
+                {/* <DeleteBtn onClick={() => deletePlayer(player._id)} />  */}
 
 
                 <FormBtn

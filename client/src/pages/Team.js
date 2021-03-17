@@ -3,6 +3,7 @@ import * as NFLIcons from 'react-nfl-logos';
 import { useAuth0 } from "@auth0/auth0-react";
 import { List, ListItem } from "../components/List";
 import DeleteBtn from "../components/DeleteBtn";
+import { Input } from "../components/Form"
 // import { Link } from "react-router-dom";
 import API from "../utils/API";
 
@@ -11,7 +12,8 @@ const Team = () => {
   const { loginWithRedirect } = useAuth0();
 
   const [teamPlayers, setTeamPlayers] = useState([]);
-  const [team, setTeam] = useState({});
+  const [team, setTeam] = useState({name:"", owner:"", player:teamPlayers});
+
   useEffect(()=> {
     checkUserLogin()
   }, [])
@@ -25,20 +27,20 @@ const Team = () => {
   }
 
   function getUserTeam(){
-    API.getTeam(user.name)
-      .then(res => {
-        setTeam(res.data)
-        setTeamPlayers(res.data.players);
-      })
+    if(team.name !=null){
+      API.getTeam(user.email)
+        .then(res => {
+          setTeam(res.data)
+          setTeamPlayers(res.data.players);
+        })
+    }
   }
 
-  // function populateData(team){
-  //   if(!team){
-  //     console.log("no team, gotta sign up");
-  //   } else {
-  //     console.log(team);
-  //   }
-  // }
+  function createTeam(event){
+    event.preventDefault();
+    API.createNewTeam(team)
+      .then(res => console.log("created successfully"))
+  }
 
   return (
         <>
@@ -51,13 +53,14 @@ const Team = () => {
         <span className="divider"></span>
     </p>
     <div className="container">
+    {team.name != null ? (
+    <>
     <center>
       <h4>{team.name}</h4>
     </center>
-    {user ? (
     <List>
       {teamPlayers.map(player => (
-        <ListItem key={user.name}>
+        <ListItem key={player.id}>
           <strong>
             {player.firstName + " " + player.lastName + " "}
             {player.team + " "}
@@ -66,7 +69,18 @@ const Team = () => {
           <DeleteBtn /> 
         </ListItem>
       ))}
-    </List>) : (<h3>No Results to Display</h3>)}
+    </List>
+    </>) : (
+    <>
+      <center>
+      <h3>No team? Create one below!</h3>
+      <form id="new-team">
+      <Input onChange={(e) => setTeam({...team, name:e.target.value, owner:user.email})} value={team.name} key="team-name" id="new-name" placeholder="Add a team name" />
+      <button id="team-name" form="new-team" onClick={createTeam} type="submit" >Create</button>
+      </form>
+      </center>
+    </>
+    )}
     </div>
      
 
