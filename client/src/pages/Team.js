@@ -29,7 +29,8 @@ const Team = () => {
     // if(team.owner === user.email)
       API.getTeam(user.email)
         .then(res => {
-          if(res != null) {
+          // console.log(res);
+          if(res.data != null) {
             setTeam(res.data)
             setTeamPlayers(res.data.players);
           }
@@ -40,7 +41,7 @@ const Team = () => {
   function createTeam(e){
     e.preventDefault()
     API.createNewTeam(team)
-      .then(res => console.log("created successfully"))
+      .then(res => window.location.reload())
   }
 
   return (
