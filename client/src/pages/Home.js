@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import "../utils/API.js";
-import "../styles/Home.css";
 import Players from "../components/Players";
 import Icons from "../components/Icons";
 
