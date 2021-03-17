@@ -1,13 +1,14 @@
 .list-overflow-container {
-  max-height: 270px;
+  max-height: 229px;
   border-radius: 4px;
   overflow-y: scroll;
   overflow-x: hidden;
-  width:80%;
+  width:85%;
   margin-left:20px;
   box-shadow: 5px 10px black; 
   margin-bottom:30px;
   margin-top:30px;
+  text-align: left;
 }
 
 .list-overflow-container ul {
@@ -26,6 +27,7 @@
 
 .list-overflow-container li a {
   color:#2E8B57;
+  
  
 }
 
