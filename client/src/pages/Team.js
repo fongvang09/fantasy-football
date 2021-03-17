@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
-import * as NFLIcons from 'react-nfl-logos';
 import { useAuth0 } from "@auth0/auth0-react";
 import { List, ListItem } from "../components/List";
 import DeleteBtn from "../components/DeleteBtn";
 import { Input } from "../components/Form"
-// import { Link } from "react-router-dom";
 import API from "../utils/API";
+import Icons from "../components/Icons";
 
 const Team = () => {
   const { user } = useAuth0();
@@ -83,9 +82,9 @@ const Team = () => {
     )}
     </div>
      
+     <Icons />
 
-
-      <section className="slider-container">
+      {/* <section className="slider-container">
   <div className="image-container">
   <div className="slider-image" ><NFLIcons.ARI />
   </div>
@@ -155,7 +154,7 @@ const Team = () => {
   </div>
   
 </div>
-</section>
+</section> */}
 </div>
       </>
     );
