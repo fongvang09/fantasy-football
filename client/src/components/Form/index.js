@@ -23,8 +23,9 @@ export function TextArea(props) {
 
 export function FormBtn(props) {
   return (
-    <button {...props} style={{  marginBottom: 5 }} className="btnthree">
-      {props.children} +
-    </button>
+    <span className="form-btn" {...props} role="button" tabIndex="0">
+{props.children}
+      +
+    </span>
   );
 }

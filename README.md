@@ -6,10 +6,9 @@ The Fantasy Football application is a dream application for any user who loves f
 
 
 ## Screenshots
-- ![]()
-- ![]()
-- ![]()
-- ![]()
+ ![Home Page](client/src/assets/images/FF1.png)
+![Home Page w/search](client/src/assets/images/FF2.png)
+
 
 ## Tools Utilized 
 The Fantasy Football Application Utlizes the following:
