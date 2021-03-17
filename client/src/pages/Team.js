@@ -12,7 +12,7 @@ const Team = () => {
   const { loginWithRedirect } = useAuth0();
 
   const [teamPlayers, setTeamPlayers] = useState([]);
-  const [team, setTeam] = useState({name:"", owner:"", player:teamPlayers});
+  const [team, setTeam] = useState({});
 
   useEffect(()=> {
     checkUserLogin()
@@ -27,17 +27,19 @@ const Team = () => {
   }
 
   function getUserTeam(){
-    if(team.name !=null){
+    // if(team.owner === user.email)
       API.getTeam(user.email)
         .then(res => {
-          setTeam(res.data)
-          setTeamPlayers(res.data.players);
+          if(res != null) {
+            setTeam(res.data)
+            setTeamPlayers(res.data.players);
+          }
         })
-    }
+    setTeam({...team, owner:user.email})
   }
 
-  function createTeam(event){
-    event.preventDefault();
+  function createTeam(e){
+    e.preventDefault()
     API.createNewTeam(team)
       .then(res => console.log("created successfully"))
   }
@@ -53,11 +55,12 @@ const Team = () => {
         <span className="divider"></span>
     </p>
     <div className="container">
-    {team.name != null ? (
+    {team.name != null && team.players ? (
     <>
     <center>
       <h4>{team.name}</h4>
     </center>
+    {team.players != [] ?(
     <List>
       {teamPlayers.map(player => (
         <ListItem key={player.id}>
@@ -69,14 +72,16 @@ const Team = () => {
           <DeleteBtn /> 
         </ListItem>
       ))}
-    </List>
+    </List>) : (<p>Nothing Yet</p>)}
     </>) : (
     <>
       <center>
       <h3>No team? Create one below!</h3>
       <form id="new-team">
-      <Input onChange={(e) => setTeam({...team, name:e.target.value, owner:user.email})} value={team.name} key="team-name" id="new-name" placeholder="Add a team name" />
-      <button id="team-name" form="new-team" onClick={createTeam} type="submit" >Create</button>
+      <Input onChange={(e) => setTeam({...team, name:e.target.value})} value={team.name} key="team-name" id="new-name" placeholder="Add a team name" />
+      <button id="team-name" form="new-team" onClick={(createTeam)} type="submit" >
+          Create
+      </button>
       </form>
       </center>
     </>
