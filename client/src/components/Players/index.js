@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { List, ListItem } from "../List";
 import DeleteBtn from "../DeleteBtn";
-import PlusBtn from "../PlusBtn";
 import { Input, FormBtn } from "../Form";
 import { Link } from "react-router-dom";
 import API from "../../utils/API";
@@ -91,7 +90,7 @@ const Players = () => {
 
                   
                 >
-               <PlusBtn id={player._id} onClick={handleFormSubmit}/>
+               
           </FormBtn>
          
 
