@@ -1,0 +1,14 @@
+.btnthree{
+    background-color:white;
+    background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
+    background: rgba(204, 204, 204, 0.5);
+    border: 2px solid black;
+    color: black;
+    height:30px;
+    font-size:14px;
+    float:right;
+    margin-right:15px;
+  
+  
+  
+  }
