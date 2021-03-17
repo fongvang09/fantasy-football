@@ -7,7 +7,6 @@ import Icons from "../components/Icons";
 const Home = () => {
   return (
     <>
-
       <div className="container maindiv">
         <center><h1>Fantasy Football</h1>
           <p className="divided">
@@ -20,17 +19,6 @@ const Home = () => {
       </div>
     </>
   );
-}
+};
 
 export default Home;
-
-
-
-
-
-
-
-
-
-
-

@@ -15,7 +15,12 @@ function Nav() {
           <li className="nav-item active">
           <Link id="top" className="navbar-brand" to="/">Home <span className="sr-only">(current)</span></Link></li>
           <li><Link id="top" className="navbar-brand" to="/team">Your Team <span className="sr-only">(current)</span></Link></li>
-          {!user ? (<li><LoginButton /></li>) : (<li><LogoutButton /></li>)}
+          {!user ? (
+          <li><LoginButton /></li>
+          ) : (<>
+          <p>Welcome {user.name}!</p>
+          <li><LogoutButton /></li>
+          </>)}
           {/* <Link id= "top" className="navbar-brand" to="/">Home <span class="sr-only">(current)</span></Link>
           <li><Link id= "top" className="navbar-brand" to="/team">Your Team <span class="sr-only">(current)</span></Link></li>
           <li><LoginButton /></li>
