@@ -8,7 +8,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 // import { load } from "dotenv/types";
 const Players = () => {
-  const { user } = useAuth0();
+  const { user, loginWithRedirect } = useAuth0();
   // Setting our component's initial state
   const [players, setPlayers] = useState([])
   const [display, setDisplayState] = useState([])
@@ -45,11 +45,14 @@ const Players = () => {
   // Then reload players from the database
   function handleFormSubmit(event) {
     event.preventDefault();
+    if(!user){
+      loginWithRedirect();
+    }
     let myPlayer = players.filter(player => event.target.id===player._id)[0]
-      API.savePlayer({
+    API.savePlayer({
         player: myPlayer,
         owner: user.email
-      })
+    })
         .then(res => console.log(res))
         .catch(err => console.log(err));
   };
