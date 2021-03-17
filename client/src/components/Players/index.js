@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { List, ListItem } from "../List";
 import DeleteBtn from "../DeleteBtn";
+import PlusBtn from "../PlusBtn";
 import { Input, FormBtn } from "../Form";
 import { Link } from "react-router-dom";
 import API from "../../utils/API";
 import { useAuth0 } from "@auth0/auth0-react";
+
 // import { load } from "dotenv/types";
 const Players = () => {
   const { user } = useAuth0();
@@ -56,20 +58,15 @@ const Players = () => {
   };
   return (
     <>
-      <div className="container maindiv">
-        <center>
-          <h3>Find a player</h3>
-        </center>
-        <p className="divided">
-          <span className="divider"></span>
-        </p>
+      <div className="container ">
+  
       </div>
       <div className="container">
         <form>
           <Input
             onChange={handleInputChange}
             name="player"
-            placeholder="NEW INPUT BOX(PLAYER/INDEX.JS)"
+            placeholder="Search Player"
           />
          {/* FormBtn was here. moved below to be on list instead of next to it  */}
         </form>
@@ -85,14 +82,23 @@ const Players = () => {
                     {/* {player.playerId + " "} */}
                   </strong>
                 </Link>
-                <DeleteBtn onClick={() => deletePlayer(player._id)} />
+
+               {/*  DeleteBtn BELOW BECAUSE IT NEEDS TO BE MOVED TO THE TEAMS PAGE, ALONG WITH THE IMPORT ABOVE */}
+                <DeleteBtn onClick={() => deletePlayer(player._id)} /> 
+
+
                 <FormBtn
                   // disabled={!(formObject.player)}
                   id={player._id}
                   onClick={handleFormSubmit}
+
+                  
                 >
-                  Draft Player
+               <PlusBtn/>
           </FormBtn>
+         
+
+
               </ListItem>
             ))}
           </List>
