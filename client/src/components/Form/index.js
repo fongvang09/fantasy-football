@@ -29,6 +29,3 @@ export function FormBtn(props) {
     </span>
   );
 }
-
-
-// btn-success

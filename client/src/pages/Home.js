@@ -1,11 +1,8 @@
 import React, { useEffect } from "react";
 import API from "../utils/API.js";
 import "../styles/Home.css";
-import PlayerCard from "../components/PlayerCard";
 import Players from "../components/Players";
-
 import * as NFLIcons from 'react-nfl-logos';
-let playerObj;
 
 const Home = () => {
     return (

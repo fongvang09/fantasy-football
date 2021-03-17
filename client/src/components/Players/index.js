@@ -45,12 +45,10 @@ const Players = () => {
   // Then reload players from the database
   function handleFormSubmit(event) {
     event.preventDefault();
-    console.log(event.target.id);
-    let myPlayer = players.filter(player=> event.target.id===player._id)[0]
-
+    let myPlayer = players.filter(player => event.target.id===player._id)[0]
       API.savePlayer({
         player: myPlayer,
-        owner: user.name
+        owner: user.email
       })
         .then(res => console.log(res))
         .catch(err => console.log(err));
@@ -78,12 +76,11 @@ const Players = () => {
                     {player.displayName + " "}
                     {player.team + " "}
                     {player.position + " "}
-                    {/* {player.playerId + " "} */}
                   </strong>
                 </Link>
 
                {/*  DeleteBtn BELOW BECAUSE IT NEEDS TO BE MOVED TO THE TEAMS PAGE, ALONG WITH THE IMPORT ABOVE */}
-                <DeleteBtn onClick={() => deletePlayer(player._id)} /> 
+                {/* <DeleteBtn onClick={() => deletePlayer(player._id)} />  */}
 
 
                 <FormBtn
