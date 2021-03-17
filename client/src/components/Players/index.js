@@ -33,11 +33,11 @@ const Players = () => {
   // Handles updating component state when the user types into the input field
   function handleInputChange(event) {
     const { value } = event.target;
-    searchPlayer(value);
+    searchPlayer(value.toLowerCase());
   };
   function searchPlayer(search) {
       let playerList = players
-      var searchResults = playerList.filter(player => player.displayName.includes(search) || player.position.includes(search) || player.team.includes(search))
+      var searchResults = playerList.filter(player => player.displayName.toLowerCase().includes(search) || player.position.toLowerCase().includes(search) || player.team.toLowerCase().includes(search))
       setDisplayState(searchResults)
   };
   // When the form is submitted, use the API.savePlayer method to save the player data
