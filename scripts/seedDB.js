@@ -14,7 +14,7 @@ axios.get(`https://www.fantasyfootballnerd.com/service/players/json/test`)
   })
   .then(res => {
     db.Players
-      .deleteMany({})
+      .remove({})
       .then(() => db.Players.collection.insertMany(teamSeed))
       .then(data => {
         console.log(data.result.n + " records inserted!");
