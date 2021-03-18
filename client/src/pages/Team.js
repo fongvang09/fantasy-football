@@ -7,16 +7,20 @@ import API from "../utils/API";
 import Icons from "../components/Icons";
 
 const Team = () => {
-  const { user } = useAuth0();
-  const { loginWithRedirect } = useAuth0();
+  // Getting user data and login link from Auth0
+  const { user, loginWithRedirect } = useAuth0();
 
+  // State hooks. teamPlayers are the players on your team.  
+  // team is to keep track of team information (i.e. name, owner email and name, etc)
   const [teamPlayers, setTeamPlayers] = useState([]);
   const [team, setTeam] = useState({});
 
+  // On load, check user log in
   useEffect(() => {
     checkUserLogin()
-  }, [])
+  }, [teamPlayers])
 
+  // Not logged in, direct to login. Otherwise, get team and populate
   function checkUserLogin() {
     if (!user) {
       loginWithRedirect()
@@ -25,25 +29,29 @@ const Team = () => {
     }
   }
 
+  // Call teamPlayers data from the database. Sets owner key in team.
   function getUserTeam() {
-    // if(team.owner === user.email)
     API.getTeam(user.email)
       .then(res => {
-        // console.log(res);
         if (res.data != null) {
           setTeam(res.data)
           setTeamPlayers(res.data.players);
         }
       })
+      .catch(err => console.log(err))
     setTeam({ ...team, owner: user.email })
   }
 
+  // Create a new team if no team exists, save to db.
   function createTeam(e) {
     e.preventDefault()
     API.createNewTeam(team)
-      .then(res => window.location.reload())
+      .then(res => console.log("well done"))
+      .catch(err => console.log(err))
+    window.location.reload();
   }
 
+  // JSX to return to the homepage
   return (
     <>
       <div className="container maindiv">
@@ -59,16 +67,16 @@ const Team = () => {
               <center>
                 <h4>{team.name}</h4>
               </center>
-              {team.players != [] ? (
+              {team.players !== [] ? (
                 <List>
                   {teamPlayers.map(player => (
-                    <ListItem key={player.id}>
+                    <ListItem key={player._id}>
                       <strong>
                         {player.firstName + " " + player.lastName + " "}
                         {player.team + " "}
                         {player.position + " "}
                       </strong>
-                      <DeleteBtn />
+                      <DeleteBtn owner={user.email} id={player._id}/>
                     </ListItem>
                   ))}
                 </List>) : (<p>Nothing Yet</p>)}

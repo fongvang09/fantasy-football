@@ -14,7 +14,6 @@ module.exports = {
             .catch(err => res.status(422).json(err))
     },
     create: function(req, res) {
-        console.log(req.body);
         db.Team
             .create(req.body)
             .then(dbModel => res.json(dbModel))
@@ -28,8 +27,13 @@ module.exports = {
             team: req.body.player.team
         }
         db.Team
-            .findOneAndUpdate({ owner: req.body.owner }, { $push: { players: myPlayer } })
+            .findOneAndUpdate({ owner: req.body.owner }, { $push: { players: myPlayer }})
             .then(playerInfo => res.json(playerInfo))
+            .catch(err => res.status(422).json(err))
+    },
+    remove: function (req, res){
+        db.Team.updateOne({owner: req.body.owner}, {$pull: {players: {_id: req.body.id}}})
+            .then(result => res.json(result))
             .catch(err => res.status(422).json(err))
     },
     findAllPlayers: function (req, res) {
