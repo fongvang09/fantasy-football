@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import LoginButton from '../Login';
 import LogoutButton from '../Logout';
 import { useAuth0 } from "@auth0/auth0-react";
+import "../../index.css";
+
 function Nav() {
   const { user } = useAuth0();
   return (
@@ -13,18 +15,21 @@ function Nav() {
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item active">
-          <Link id="top" className="navbar-brand" to="/">Home <span className="sr-only">(current)</span></Link></li>
-          <li><Link id="top" className="navbar-brand" to="/team">Your Team <span className="sr-only">(current)</span></Link></li>
+            <Link id="top" className="navbar-brand" to="/">Home <span className="sr-only">(current)</span></Link>
+          </li>
+          <li>
+            <Link id="top" className="navbar-brand" to="/team">Your Team <span className="sr-only">(current)</span></Link>
+          </li>
+
           {!user ? (
-          <li><LoginButton /></li>
-          ) : (<>
-          <p>Welcome {user.name}!</p>
-          <li><LogoutButton /></li>
-          </>)}
-          {/* <Link id= "top" className="navbar-brand" to="/">Home <span class="sr-only">(current)</span></Link>
-          <li><Link id= "top" className="navbar-brand" to="/team">Your Team <span class="sr-only">(current)</span></Link></li>
-          <li><LoginButton /></li>
-          <li><LogoutButton /></li> */}
+            <li><LoginButton /></li>
+          ) : (
+            <>
+              <p className="navbar-brand test">Welcome {user.name}!</p>
+              <li><LogoutButton /></li>
+            </>)
+          }
+
         </ul>
       </div>
     </nav>

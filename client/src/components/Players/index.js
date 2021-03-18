@@ -37,29 +37,28 @@ const Players = () => {
     searchPlayer(value.toLowerCase());
   };
   function searchPlayer(search) {
-      let playerList = players
-      var searchResults = playerList.filter(player => player.displayName.toLowerCase().includes(search) || player.position.toLowerCase().includes(search) || player.team.toLowerCase().includes(search))
-      setDisplayState(searchResults)
+    let playerList = players
+    var searchResults = playerList.filter(player => player.displayName.toLowerCase().includes(search) || player.position.toLowerCase().includes(search) || player.team.toLowerCase().includes(search))
+    setDisplayState(searchResults)
   };
   // When the form is submitted, use the API.savePlayer method to save the player data
   // Then reload players from the database
   function handleFormSubmit(event) {
     event.preventDefault();
-    if(!user){
+    if (!user) {
       loginWithRedirect();
     }
-    let myPlayer = players.filter(player => event.target.id===player._id)[0]
+    let myPlayer = players.filter(player => event.target.id === player._id)[0]
     API.savePlayer({
-        player: myPlayer,
-        owner: user.email
+      player: myPlayer,
+      owner: user.email
     })
-        .then(res => console.log(res))
-        .catch(err => console.log(err));
+      .then(res => console.log(res))
+      .catch(err => console.log(err));
   };
   return (
     <>
       <div className="container ">
-  
       </div>
       <div className="container">
         <form>
@@ -68,7 +67,7 @@ const Players = () => {
             name="player"
             placeholder="Search Player"
           />
-         {/* FormBtn was here. moved below to be on list instead of next to it  */}
+          {/* FormBtn was here. moved below to be on list instead of next to it  */}
         </form>
         {display.length ? (
           <List>
@@ -81,29 +80,20 @@ const Players = () => {
                     {player.position + " "}
                   </strong>
                 </Link>
-
-               {/*  DeleteBtn BELOW BECAUSE IT NEEDS TO BE MOVED TO THE TEAMS PAGE, ALONG WITH THE IMPORT ABOVE */}
+                 {/* DeleteBtn BELOW BECAUSE IT NEEDS TO BE MOVED TO THE TEAMS PAGE, ALONG WITH THE IMPORT ABOVE */}
                 {/* <DeleteBtn onClick={() => deletePlayer(player._id)} />  */}
-
-
                 <FormBtn
                   // disabled={!(formObject.player)}
                   id={player._id}
                   onClick={handleFormSubmit}
-
-                  
                 >
-               
-          </FormBtn>
-         
-
-
+                </FormBtn>
               </ListItem>
             ))}
           </List>
         ) : (
-            <h3>No Results to Display</h3>
-          )}
+          <h3>No Results to Display</h3>
+        )}
       </div>
     </>
   );

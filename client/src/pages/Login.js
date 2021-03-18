@@ -1,9 +1,5 @@
 import React from "react";
 
-
-
-
-
 const InputPage = () => {
   return (
     <div className="form-group">
@@ -29,5 +25,3 @@ const InputPage = () => {
 }
 
 export default InputPage;
-
-
