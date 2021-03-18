@@ -30,6 +30,13 @@ export default {
         // console.log(playerData);
         console.log(playerData.player.displayName + " has been added!");
         document.getElementById("added").innerHTML = playerData.player.displayName + " has been added!";
+
+        var timer = document.getElementById("added");
+        timer.setAttribute("class", "notification fade-in");
+        setTimeout(function() {
+            timer.setAttribute("class", "notification fade-in hide");
+        }, 2000);
+
         return axios.post("/api/players", playerData);
     }
 };
