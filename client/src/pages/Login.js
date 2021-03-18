@@ -11,15 +11,13 @@ const InputPage = () => {
         placeholder="Username"
       />
       <br/>
-       <input
+      <input
         type="text"
         className="form-control"
         id="formGroupExampleInput"
         placeholder="Password"
       />
-      {/* <form ref="form" onSubmit={this.handleSubmit}> */}
     <button type="submit">Sign In</button>
-{/* </form> */}
     </div>
   );
 }

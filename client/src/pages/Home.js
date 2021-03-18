@@ -5,22 +5,18 @@ import Icons from "../components/Icons";
 
 const Home = () => {
   return (
-    <> 
-     
+    <>
       <div className="container maindiv">
         <center><h1>Fantasy Football</h1>
           <p className="divided">
             <span className="divider"></span>
           </p>
           <h4>Create your dream team</h4>
-          
           <Players />
           <h4><div id="added" /></h4>
-          
         </center>
         <Icons />
       </div>
-     
     </>
   );
 };
