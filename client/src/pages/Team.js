@@ -13,160 +13,83 @@ const Team = () => {
   const [teamPlayers, setTeamPlayers] = useState([]);
   const [team, setTeam] = useState({});
 
-  useEffect(()=> {
+  useEffect(() => {
     checkUserLogin()
   }, [])
 
   function checkUserLogin() {
-    if(!user){
+    if (!user) {
       loginWithRedirect()
     } else {
       getUserTeam();
     }
   }
 
-  function getUserTeam(){
+  function getUserTeam() {
     // if(team.owner === user.email)
-      API.getTeam(user.email)
-        .then(res => {
-          // console.log(res);
-          if(res.data != null) {
-            setTeam(res.data)
-            setTeamPlayers(res.data.players);
-          }
-        })
-    setTeam({...team, owner:user.email})
+    API.getTeam(user.email)
+      .then(res => {
+        // console.log(res);
+        if (res.data != null) {
+          setTeam(res.data)
+          setTeamPlayers(res.data.players);
+        }
+      })
+    setTeam({ ...team, owner: user.email })
   }
 
-  function createTeam(e){
+  function createTeam(e) {
     e.preventDefault()
     API.createNewTeam(team)
       .then(res => window.location.reload())
   }
 
   return (
-        <>
-      
+    <>
       <div className="container maindiv">
         <center>
-      <h3>Current Team</h3>
-      </center>
-      <p className="divided">
-        <span className="divider"></span>
-    </p>
-    <div className="container">
-    {team.name != null && team.players ? (
-    <>
-    <center>
-      <h4>{team.name}</h4>
-    </center>
-    {team.players != [] ?(
-    <List>
-      {teamPlayers.map(player => (
-        <ListItem key={player.id}>
-          <strong>
-            {player.firstName + " " + player.lastName + " "}
-            {player.team + " "}
-            {player.position + " "}
-          </strong>
-          <DeleteBtn /> 
-        </ListItem>
-      ))}
-    </List>) : (<p>Nothing Yet</p>)}
-    </>) : (
-    <>
-      <center>
-      <h3>No team? Create one below!</h3>
-      <form id="new-team">
-      <Input onChange={(e) => setTeam({...team, name:e.target.value})} value={team.name} key="team-name" id="new-name" placeholder="Add a team name" />
-      <button id="team-name" form="new-team" onClick={(createTeam)} type="submit" className="my-2 btn btn-secondary btn-sm" >
-          Create
-      </button>
-      </form>
-      </center>
+          <h3>Current Team</h3>
+        </center>
+        <p className="divided">
+          <span className="divider"></span>
+        </p>
+        <div className="container">
+          {team.name != null && team.players ? (
+            <>
+              <center>
+                <h4>{team.name}</h4>
+              </center>
+              {team.players != [] ? (
+                <List>
+                  {teamPlayers.map(player => (
+                    <ListItem key={player.id}>
+                      <strong>
+                        {player.firstName + " " + player.lastName + " "}
+                        {player.team + " "}
+                        {player.position + " "}
+                      </strong>
+                      <DeleteBtn />
+                    </ListItem>
+                  ))}
+                </List>) : (<p>Nothing Yet</p>)}
+            </>) : (
+            <>
+              <center>
+                <h3>No team? Create one below!</h3>
+                <form id="new-team">
+                  <Input onChange={(e) => setTeam({ ...team, name: e.target.value })} value={team.name} key="team-name" id="new-name" placeholder="Add a team name" />
+                  <button id="team-name" form="new-team" onClick={(createTeam)} type="submit" className="my-2 btn btn-secondary btn-sm" >
+                    Create
+                  </button>
+                </form>
+              </center>
+            </>
+          )}
+        </div>
+        <Icons />
+      </div>
     </>
-    )}
-    </div>
-     
-     <Icons />
+  );
+}
 
-      {/* <section className="slider-container">
-  <div className="image-container">
-  <div className="slider-image" ><NFLIcons.ARI />
-  </div>
-  <div className="slider-image" ><NFLIcons.MIN />
-  </div>
-  <div className="slider-image" ><NFLIcons.DET />
-  </div>
-  <div className="slider-image" > <NFLIcons.BAL />
-  </div>
-  <div className="slider-image" > <NFLIcons.ATL />
-  </div>
-  <div className="slider-image" > <NFLIcons.BUF />
-  </div>
-  <div className="slider-image" > <NFLIcons.CAR />
-  </div>
-  <div className="slider-image" >  <NFLIcons.CHI />
-  </div>
-  <div className="slider-image" > <NFLIcons.CIN />
-  </div>
-  <div className="slider-image" ><NFLIcons.CLE />
-  </div>
-  <div className="slider-image" ><NFLIcons.DAL />
-  </div>
-  <div className="slider-image" ><NFLIcons.DEN />
-  </div>
-  <div className="slider-image" ><NFLIcons.DET />
-  </div>
-  <div className="slider-image" > <NFLIcons.GB />
-  </div>
-  <div className="slider-image" > <NFLIcons.HOU />
-  </div>
-  <div className="slider-image" ><NFLIcons.IND />
-  </div>
-  <div className="slider-image" > <NFLIcons.WAS />
-  </div>
-  <div className="slider-image" > <NFLIcons.TEN />
-  </div>
-  <div className="slider-image" ><NFLIcons.TB />
-  </div> 
-  <div className="slider-image" > <NFLIcons.SF />
-  </div>
-  <div className="slider-image" ><NFLIcons.SEA />
-  </div>
-  <div className="slider-image" ><NFLIcons.PIT />
-  </div>
-  <div className="slider-image" > <NFLIcons.PHI />
-  </div>
-  <div className="slider-image" > <NFLIcons.NYJ />
-  </div>
-  <div className="slider-image" > <NFLIcons.NYG />
-  </div>
-  <div className="slider-image" > <NFLIcons.NO />
-  </div> 
-  <div className="slider-image" >  <NFLIcons.NE />
-  </div>
-  <div className="slider-image" ><NFLIcons.MIA />
-  </div>
-  <div className="slider-image" > <NFLIcons.LV />
-  </div>
-  <div className="slider-image" ><NFLIcons.LAR />
-  </div>
-  <div className="slider-image" > <NFLIcons.LAC />
-  </div>
-  <div className="slider-image" > <NFLIcons.KC />
-  </div>
-  <div className="slider-image" > <NFLIcons.JAX />
-  </div>
-  
-</div>
-</section> */}
-</div>
-      </>
-    );
-  }
-
-
-  
-  
-  export default Team;
+export default Team;

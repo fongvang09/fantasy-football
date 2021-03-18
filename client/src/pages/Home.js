@@ -11,11 +11,13 @@ const Home = () => {
           <p className="divided">
             <span className="divider"></span>
           </p>
-          <h4>Create your dream team.</h4>
+          <h4>Create your dream team</h4>
           <Players />
         </center>
         <Icons />
       </div>
+      <div id="added" />
+      {/* <p id="added"></p> */}
     </>
   );
 };
