@@ -1,15 +1,29 @@
 .form-btn{
-  font-size:30px;
+  font-size:32px;
   font-weight:bold;
   float:right;
-  padding-right:10px;
-  padding-left:10px;
+  padding-right:0px;
+  padding-left:0px;
   margin-top:-10px;
   padding-bottom:0px;
   margin-bottom:0px;
-  height:30px;
+height:20px;
 }
   
 .form-btn:hover{
  color:gray;
+ outline:none !important;
 }
+
+.form-btn:focus{
+  color:gray;
+  
+  outline:none !important;
+  
+
+}
+
+
+
+
+

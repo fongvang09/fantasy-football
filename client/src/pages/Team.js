@@ -75,7 +75,7 @@ const Team = () => {
             </>) : (
             <>
               <center>
-                <h3>No team? Create one below!</h3>
+                <h3>Create your team!</h3>
                 <form id="new-team">
                   <Input onChange={(e) => setTeam({ ...team, name: e.target.value })} value={team.name} key="team-name" id="new-name" placeholder="Add a team name" />
                   <button id="team-name" form="new-team" onClick={(createTeam)} type="submit" className="my-2 btn btn-secondary btn-sm" >
