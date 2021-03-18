@@ -6,4 +6,11 @@
 }
 .delete-btn:hover{
   color:gray;
- }
+  
+}
+.delete-btn:focus{
+  color:gray;
+  outline:none !important;
+  
+
+}
