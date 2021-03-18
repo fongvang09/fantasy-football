@@ -46,9 +46,8 @@ const Team = () => {
   function createTeam(e) {
     e.preventDefault()
     API.createNewTeam(team)
-      .then(res => console.log("well done"))
+      .then(res => window.location.reload())
       .catch(err => console.log(err))
-    window.location.reload();
   }
 
   // JSX to return to the homepage
@@ -65,8 +64,9 @@ const Team = () => {
           {team.name != null && team.players ? (
             <>
               <center>
-                <h4>{team.name}</h4>
+                <h4><center>{team.name}</center></h4>
               </center>
+              <div className="containertwo">
               {team.players !== [] ? (
                 <List>
                   {teamPlayers.map(player => (
@@ -78,10 +78,13 @@ const Team = () => {
                       </strong>
                       <DeleteBtn owner={user.email} id={player._id}/>
                     </ListItem>
+                    
                   ))}
                 </List>) : (<p>Nothing Yet</p>)}
+                </div>
             </>) : (
             <>
+            
               <center>
                 <h3>Create your team!</h3>
                 <form id="new-team">
@@ -93,9 +96,11 @@ const Team = () => {
               </center>
             </>
           )}
+          
         </div>
         <Icons />
       </div>
+      
     </>
   );
 }
