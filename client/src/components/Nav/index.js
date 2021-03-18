@@ -25,7 +25,7 @@ function Nav() {
             <li><LoginButton /></li>
           ) : (
             <>
-              <p className="navbar-brand test">Welcome {user.name}!</p>
+              <p className="navbar-brand test" id="navbarname">Welcome {user.name}!</p>
               <li><LogoutButton /></li>
             </>)
           }

@@ -23,7 +23,7 @@ h1 {
 }
 
 #added {
-    color: white;
+    color:white;
 }
 
 body {
@@ -77,11 +77,15 @@ body {
     background: rgba(204, 204, 204, 0.5);
     font-family: 'Prata', serif;
     font-size: 16px;
+    margin-bottom:0px;
 }
 
 .navbar-brand {
     font-size: 16px;
+   
 }
+
+
 
 .slider-container {
     width: 100%;
