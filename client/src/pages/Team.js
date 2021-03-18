@@ -46,9 +46,8 @@ const Team = () => {
   function createTeam(e) {
     e.preventDefault()
     API.createNewTeam(team)
-      .then(res => console.log("well done"))
+      .then(res => window.location.reload())
       .catch(err => console.log(err))
-    window.location.reload();
   }
 
   // JSX to return to the homepage

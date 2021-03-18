@@ -20,7 +20,6 @@ function Nav() {
           <li>
             <Link id="top" className="navbar-brand" to="/team">Your Team <span className="sr-only">(current)</span></Link>
           </li>
-
           {!user ? (
             <li><LoginButton /></li>
           ) : (
@@ -29,7 +28,6 @@ function Nav() {
               <li><LogoutButton /></li>
             </>)
           }
-
         </ul>
       </div>
     </nav>

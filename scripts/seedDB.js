@@ -13,7 +13,7 @@ mongoose.connect(
 );
 let teamSeed;
 
-axios.get(`https://www.fantasyfootballnerd.com/service/players/json/test`)
+axios.get(`https://www.fantasyfootballnerd.com/service/players/json/${process.env.API_KEY}`)
   .then(res => {
     teamSeed = res.data.Players.filter(player => player.active == "1");
   })
