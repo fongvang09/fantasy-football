@@ -26,7 +26,11 @@
 }
 
 .list-overflow-container li a {
-  color:#2E8B57;
+  color:black;
+  color: currentColor;
+ 
+  pointer-events: none;
+  text-decoration: none;
   
  
 }
@@ -48,5 +52,4 @@
   border-bottom: none;
   
 }
-
 

@@ -29,8 +29,8 @@ export default {
     // Saves a player to the database
     savePlayer: function (playerData) {
         // console.log(playerData);
-        console.log(playerData.player.displayName + " has been added!");
-        document.getElementById("added").innerHTML = playerData.player.displayName + " has been added!";
+        console.log(playerData.player.displayName + " has been added");
+        document.getElementById("added").innerHTML = playerData.player.displayName + " has been added to your team";
         return axios.post("/api/players", playerData);
     }
 };

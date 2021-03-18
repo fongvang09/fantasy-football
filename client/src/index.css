@@ -77,11 +77,15 @@ body {
     background: rgba(204, 204, 204, 0.5);
     font-family: 'Prata', serif;
     font-size: 16px;
+    margin-bottom:0px;
 }
 
 .navbar-brand {
     font-size: 16px;
+   
 }
+
+
 
 .slider-container {
     width: 100%;
@@ -165,11 +169,9 @@ body {
     text-align: center !important;
 }
 
-/* .test {
-    position: absolute;
-    margin-right: auto;
-    margin-left: auto;
-    left: 0;
-    right: 0;
-    text-align: center;
-} */
+#navbarname{
+    padding:0px;
+    margin-bottom:0px;
+    margin-top:5px;
+  
+}
