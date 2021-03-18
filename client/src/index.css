@@ -78,10 +78,12 @@ body {
     font-family: 'Prata', serif;
     font-size: 16px;
     margin-bottom:0px;
+    padding-bottom:0px;
 }
 
 .navbar-brand {
     font-size: 16px;
+    padding:0px;
    
 }
 

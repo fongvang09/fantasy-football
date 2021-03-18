@@ -53,12 +53,12 @@ const Team = () => {
         <p className="divided">
           <span className="divider"></span>
         </p>
-        <div className="container">
+        <div className="container ">
           {team.name != null && team.players ? (
             <>
               <center>
                 <h4>{team.name}</h4>
-              </center>
+              
               {team.players != [] ? (
                 <List>
                   {teamPlayers.map(player => (
@@ -67,12 +67,17 @@ const Team = () => {
                         {player.firstName + " " + player.lastName + " "}
                         {player.team + " "}
                         {player.position + " "}
+                        
                       </strong>
+                      
+                      
                       <DeleteBtn />
                     </ListItem>
+                     
                   ))}
-                </List>) : (<p>Nothing Yet</p>)}
+                </List>) : (<p>Nothing Yet</p>)} </center>
             </>) : (
+             
             <>
               <center>
                 <h3>Create your team!</h3>

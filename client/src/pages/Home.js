@@ -15,7 +15,7 @@ const Home = () => {
           <h4>Create your dream team</h4>
           
           <Players />
-          <h4><div id="added" /></h4>
+          <h5><div id="added" /></h5>
           
         </center>
         <Icons />
