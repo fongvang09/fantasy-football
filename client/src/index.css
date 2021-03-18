@@ -4,6 +4,9 @@ h1 {
     color: black;
     font-family: 'Prata', serif;
 }
+h4{
+    text-align:center;
+}
 
 .maindiv {
     float: none;
@@ -227,4 +230,9 @@ body {
 @keyframes fade {
   0%,100% { opacity: 0 }
   50% { opacity: 1 }
+}
+
+.containertwo{
+    padding-left:50px;
+    text-align: center;
 }
