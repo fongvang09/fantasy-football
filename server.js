@@ -15,7 +15,12 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/fantasy_teams", { useFindAndModify:false, useNewUrlParser:true, useUnifiedTopology:true });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/fantasy_teams", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false
+});
 
 // Add routes, both API and view
 app.use(routes)

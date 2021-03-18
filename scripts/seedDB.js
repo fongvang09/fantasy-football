@@ -4,7 +4,12 @@ const axios = require("axios");
 
 mongoose.connect(
   process.env.MONGODB_URI ||
-  "mongodb://localhost/fantasy_teams", { useNewUrlParser: true, useUnifiedTopology: true }
+  "mongodb://localhost/fantasy_teams", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+  }
 );
 let teamSeed;
 
