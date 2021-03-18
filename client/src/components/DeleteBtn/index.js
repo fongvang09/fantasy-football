@@ -8,17 +8,19 @@ function DeleteBtn(props) {
 
   function dltPlayer(e){
     e.preventDefault();
+    console.log("hello");
     let callObj = {
       owner: user.email,
       id: e.target.id
     };
+    console.log(callObj);
     API.deletePlayer(callObj)
       .then(res => {console.log(res)})
       .catch(err => console.log(err))
   }
 
   return (
-    <span className="delete-btn" {...props} role="button" tabIndex="0" onClick={ e => dltPlayer(e)}>
+    <span className="delete-btn" {...props} role="button" tabIndex="0" onClick={e => dltPlayer(e)}>
       ✗
     </span>
   );

@@ -22,7 +22,13 @@ export default {
 
     // Deletes the player with the given id
     deletePlayer: function (data) {
-        return axios.delete("/api/players/delete", data);
+        // console.log(data.owner + data.id);
+        return axios.delete("/api/players/delete", {
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            data
+        })
     },
 
     // Saves a player to the database

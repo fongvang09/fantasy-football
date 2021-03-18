@@ -18,7 +18,7 @@ const Team = () => {
   // On load, check user log in
   useEffect(() => {
     checkUserLogin()
-  }, [])
+  }, [teamPlayers])
 
   // Not logged in, direct to login. Otherwise, get team and populate
   function checkUserLogin() {
@@ -48,6 +48,7 @@ const Team = () => {
     API.createNewTeam(team)
       .then(res => console.log("well done"))
       .catch(err => console.log(err))
+    window.location.reload();
   }
 
   // JSX to return to the homepage
@@ -66,7 +67,7 @@ const Team = () => {
               <center>
                 <h4>{team.name}</h4>
               </center>
-              {team.players != [] ? (
+              {team.players !== [] ? (
                 <List>
                   {teamPlayers.map(player => (
                     <ListItem key={player._id}>
