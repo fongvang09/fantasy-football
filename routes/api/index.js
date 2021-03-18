@@ -16,4 +16,7 @@ router.route("/players")
     .get(teamController.findAllPlayers)
     .post(teamController.savePlayer)
 
+router.route("/players/delete")
+    .delete(teamController.remove)
+
 module.exports = router;

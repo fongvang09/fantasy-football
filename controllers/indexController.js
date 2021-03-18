@@ -32,6 +32,13 @@ module.exports = {
             .then(playerInfo => res.json(playerInfo))
             .catch(err => res.status(422).json(err))
     },
+    remove: function (req, res){
+        console.log(req)
+        // db.Team
+        //     .updateOne({ owner: req.body.owner }, { $pull: { players: req.body.id } })
+        //     .then(data => res.json(data))
+        //     .catch(err => res.status(422).json(err))
+    },
     findAllPlayers: function (req, res) {
         db.Players
             .find(req.query)
