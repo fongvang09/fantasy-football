@@ -1,10 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "../utils/API.js";
 import Players from "../components/Players";
 import Icons from "../components/Icons";
 import "../index.css";
 import "../components/List/style.css";
-
 
 const Home = () => {
   return (

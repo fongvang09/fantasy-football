@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { List, ListItem } from "../List";
-import DeleteBtn from "../DeleteBtn";
+// import DeleteBtn from "../DeleteBtn";
 import { Input, FormBtn } from "../Form";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import API from "../../utils/API";
 import { useAuth0 } from "@auth0/auth0-react";
 
@@ -29,12 +29,12 @@ const Players = () => {
       .catch(err => console.log(err));
   };
 
-  // Deletes a player from the database with a given id, then reloads teams from the db
-  function deletePlayer(id) {
-    API.deletePlayer(id)
-      .then(res => loadPlayers())
-      .catch(err => console.log(err));
-  }
+  // // Deletes a player from the database with a given id, then reloads teams from the db
+  // function deletePlayer(id) {
+  //   API.deletePlayer(id)
+  //     .then(res => loadPlayers())
+  //     .catch(err => console.log(err));
+  // }
 
   // Handles updating component state when the user types into the input field
   function handleInputChange(event) {
