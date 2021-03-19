@@ -3,8 +3,11 @@
   border-radius: 4px;
   overflow-y: scroll;
   overflow-x: hidden;
-  width:85%;
-  /* margin-left:20px; */
+
+  width:auto;
+  margin-left:auto;
+  margin-right:auto;
+
   box-shadow: 5px 10px black; 
   margin-bottom:30px;
   margin-top:30px;
