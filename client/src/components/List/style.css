@@ -31,11 +31,8 @@
 .list-overflow-container li a {
   color:black;
   color: currentColor;
- 
   pointer-events: none;
   text-decoration: none;
-  
- 
 }
 
 .list-overflow-container li {
@@ -48,26 +45,22 @@
   box-shadow: 2px 2px;
   padding-bottom:6px;
   padding-top:8px;
-
 }
 
 .list-overflow-container li:last-child {
   border-bottom: none;
-  
 }
 
 @media screen and (max-width: 550px) {
   .list-overflow-container li {
     padding: 5px 20px;
   }
-
 }
 
 @media screen and (max-width: 375px) {
   .list-overflow-container li {
     padding: 5px 10px;
   }
-
 }
 
 @media screen and (max-width: 320px) {
@@ -95,13 +88,12 @@
   b, strong {
     font-size: 12px;
   }
-  
-  /* fix? */
+}
+
+@media screen and (max-width: 270px) {
   #playerinput {
-    width: 90%;
+    min-width: 100%;
     padding: 3px 6px;
     height: 30px;
   }
-
-
 }

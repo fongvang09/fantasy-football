@@ -2,7 +2,6 @@ import React from "react";
 import "../index.css";
 import "../components/List/style.css";
 
-
 const InputPage = () => {
   return (
     <div className="form-group">
