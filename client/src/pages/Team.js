@@ -5,6 +5,8 @@ import DeleteBtn from "../components/DeleteBtn";
 import { Input } from "../components/Form"
 import API from "../utils/API";
 import Icons from "../components/Icons";
+import "../index.css";
+import "../components/List/style.css";
 
 const Team = () => {
   // Getting user data and login link from Auth0

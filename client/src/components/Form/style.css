@@ -1,13 +1,14 @@
 .form-btn{
   font-size:32px;
   font-weight:bold;
-  float:right;
-  padding-right:0px;
-  padding-left:0px;
   margin-top:-10px;
   padding-bottom:0px;
   margin-bottom:0px;
-height:20px;
+  height:20px;
+  font-size: 32px;
+  padding: 0px;
+  float:right;
+  height: 19px;
 }
   
 .form-btn:hover{

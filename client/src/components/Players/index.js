@@ -68,9 +68,9 @@ const Players = () => {
   //Return JSX
   return (
     <>
-      <div className="container ">
-      </div>
-      <div className="container">
+      {/* <div className="container ">
+      </div> */}
+      <div className="container1">
         <form>
           <Input
             onChange={handleInputChange}
